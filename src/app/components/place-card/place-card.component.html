@@ -1,9 +1,9 @@
 <div class="place-card">
-  <img src="{{ place.image || 'assets/default-image.jpg' }}" alt="Imagem do local">
-  <div>
-    <h2>{{ place.name }}</h2>
+  <img [src]="place.image" alt="Imagem do local" class="place-image">
+  <div class="place-info">
+    <h3>{{ place.name }}</h3>
     <p><strong>Categoria:</strong> {{ place.category }}</p>
     <p><strong>Endereço:</strong> {{ place.address }}</p>
-    <p><strong>Descrição:</strong> {{ place.description || 'Sem descrição disponível.' }}</p>
+    <p><strong>Descrição:</strong> {{ place.description }}</p>
   </div>
 </div>

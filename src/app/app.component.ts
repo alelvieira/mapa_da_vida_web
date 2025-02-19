@@ -1,29 +1,33 @@
-import { CommonModule } from '@angular/common';  // Importação do CommonModule
-import { Component } from '@angular/core';
-import { MapComponent } from './components/map/map.component'; // Supondo que o MapComponent seja um componente filho
-import { PlaceCardComponent } from './components/place-card/place-card.component';
-import {HeaderComponent} from './components/header/header.component';
-import {RouterOutlet} from '@angular/router'; // Componente filho onde o *ngFor é utilizado
+import { Component, inject } from '@angular/core';
+import { NotificationService } from './services/notification.service';
+import {NotificationComponent} from './components/notification/notification.component';
+import {Router, RouterOutlet} from '@angular/router';
+import {LocalStorageService} from './services/local-storage.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, MapComponent, PlaceCardComponent, HeaderComponent, RouterOutlet],  // Adicionando CommonModule aqui
+  imports: [NotificationComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-places = [
-    {
-      name: 'Parque Nacional',
-      category: 'Parque',
-      address: 'Rua XYZ',
-      description: 'Lugar perfeito para caminhadas.',
-      lat: 45.0,
-      lng: -75.0,
-      type: 'parque'  // A propriedade 'type' é necessária
-    },
-    // Outros objetos
-  ];
-}
+  notificationService = inject(NotificationService);
+  private storageService = inject(LocalStorageService);
+  private router = inject(Router);
 
+  constructor() {
+    if (this.storageService.isLoggedIn()) {
+      this.router.navigate(['/home']); // Redireciona para a home se já estiver logado
+    }
+  }
+
+  // Simulando um login bem-sucedido
+  loginSuccess() {
+    this.notificationService.showMessage('✅ Login realizado com sucesso!');
+  }
+
+  loginError() {
+    this.notificationService.showMessage('❌ Erro ao fazer login!', 5000);
+  }
+}

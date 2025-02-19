@@ -1,38 +1,34 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
-import { Place } from '../../models/place.model'; // ✅ Importação do modelo
+import { Component, AfterViewInit, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+declare var google: any;
 
 @Component({
   selector: 'app-map',
   standalone: true,
-  template: '<div id="map"></div>',
+  imports: [CommonModule],
+  templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements AfterViewInit {
-  @Input() locations: Place[] = []; // ✅ Aplicação do tipo Place[]
+  @Input() locations: { lat: number; lng: number; name: string }[] = [];
 
   ngAfterViewInit(): void {
-    if (typeof window !== 'undefined') {
-      // Usar o Leaflet somente no lado do cliente
-      import('leaflet').then((L) => {
-        const map = L.map('map').setView([-25.4296, -49.2713], 12);
+    this.initMap();
+  }
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  private initMap(): void {
+    const map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
+      center: { lat: -25.4284, lng: -49.2733 },
+      zoom: 12
+    });
 
-        // Ícones personalizados para diferentes tipos de locais
-        const icons: Record<Place['type'], L.Icon> = {
-          Parque: L.icon({ iconUrl: 'assets/icons/park.png', iconSize: [32, 32] }),
-          Academia: L.icon({ iconUrl: 'assets/icons/gym.png', iconSize: [32, 32] }),
-          'Academia ao ar livre': L.icon({ iconUrl: 'assets/icons/square.png', iconSize: [32, 32] }),
-        };
-
-        this.locations.forEach(loc => {
-          const iconType = icons[loc.type] || icons['Parque']; // Ícone padrão
-          L.marker([loc.lat, loc.lng], { icon: iconType }).addTo(map)
-            .bindPopup(`<b>${loc.name}</b><br>${loc.category}<br>${loc.address}`);
-        });
-      }).catch(error => {
-        console.error('Erro ao carregar o Leaflet:', error);
+    this.locations.forEach(loc => {
+      new google.maps.Marker({
+        position: { lat: loc.lat, lng: loc.lng },
+        map,
+        title: loc.name
       });
-    }
+    });
   }
 }

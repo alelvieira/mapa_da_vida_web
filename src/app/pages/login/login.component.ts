@@ -1,34 +1,48 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { NotificationService } from '../../services/notification.service';
 import { AuthService } from '../../services/auth.service';
+import {FormsModule} from '@angular/forms';
+import {LocalStorageService} from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   templateUrl: './login.component.html',
   imports: [
-    FormsModule
+    FormsModule, CommonModule
   ],
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
+  private router = inject(Router);
+  private notificationService = inject(NotificationService);
+  private storageService = inject(LocalStorageService);
+  private authService = inject(AuthService);
 
-  constructor(private router: Router, private authService: AuthService) {}
+  email = '';
+  password = '';
 
+  isLoggedIn(): boolean {
+    return this.storageService.isLoggedIn();
+  }
 
   login() {
     if (this.email === 'admin@mapadavida.com' && this.password === '12345678') {
-      alert('Login bem-sucedido!');
-      this.router.navigate(['/home']); // Redireciona para a home
+      this.storageService.setItem('user', { email: this.email });
+      this.notificationService.showMessage('✅ Login bem-sucedido!');
+      this.router.navigate(['/home']);
     } else {
-      alert('E-mail ou senha inválidos');
+      this.notificationService.showMessage('❌ E-mail ou senha inválidos!', 4000);
     }
   }
 
   logout() {
-    this.authService.logout(); // Chama o mesmo logout
+    this.storageService.removeItem('user');
+    this.notificationService.showMessage('👋 Você saiu da conta.');
+    this.router.navigate(['/login']);
   }
 
 }

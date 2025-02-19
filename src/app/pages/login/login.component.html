@@ -1,6 +1,6 @@
 <div class="login-container">
-  <div class="login-box">
-    <h2>Mapa da Vida</h2>
+  <div *ngIf="!isLoggedIn(); else loggedInTemplate">
+    <h2>Login</h2>
     <form (ngSubmit)="login()">
       <div class="input-group">
         <label for="email">E-mail</label>
@@ -15,4 +15,10 @@
       <button type="submit" class="btn-login">Entrar</button>
     </form>
   </div>
+
+  <ng-template #loggedInTemplate>
+    <h2>Bem-vindo!</h2>
+    <p>Você está logado.</p>
+    <button class="btn-logout" (click)="logout()">Sair</button>
+  </ng-template>
 </div>

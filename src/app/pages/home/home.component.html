@@ -1,11 +1,6 @@
 <app-header></app-header>
 
-<div class="content">
-  <div class="place-list">
-    <app-place-card *ngFor="let place of places" [place]="place"></app-place-card>
-  </div>
 
-  <div class="map-container">
-    <app-map [locations]="places"></app-map>
-  </div>
-</div>
+<h2>Mapa dos Locais</h2>
+<app-map></app-map>
+

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {HeaderComponent} from '../../components/header/header.component';
 import {PlaceCardComponent} from '../../components/place-card/place-card.component';
 import {MapComponent} from '../../components/map/map.component';
-import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +9,7 @@ import {NgForOf} from '@angular/common';
   imports: [
     HeaderComponent,
     PlaceCardComponent,
-    MapComponent,
-    NgForOf
+    MapComponent
   ],
   styleUrls: ['./home.component.css']
 })
