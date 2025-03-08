@@ -1,0 +1,33 @@
+<h2>Editar Usuário</h2>
+
+<div class="input-group">
+  <label>Nome:</label>
+  <input type="text" [(ngModel)]="usuario.nome">
+</div>
+
+<div class="input-group">
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="usuario.email">
+</div>
+
+<div class="input-group">
+  <label>Senha:</label>
+  <input type="password" [(ngModel)]="usuario.senha">
+</div>
+
+<div *ngIf="usuario.tipo === 'profissional'">
+  <div class="input-group">
+    <label>Registro de Especialidade:</label>
+    <input type="text" [(ngModel)]="usuario.registro">
+  </div>
+
+  <div class="input-group">
+    <label>Conselho Responsável:</label>
+    <input type="text" [(ngModel)]="usuario.conselho">
+  </div>
+</div>
+
+<div class="modal-buttons">
+  <button (click)="salvar()">Salvar</button>
+  <button (click)="cancelar()">Cancelar</button>
+</div>

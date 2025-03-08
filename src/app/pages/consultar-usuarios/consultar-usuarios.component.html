@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="consulta-container">
+  <h2>Usuários Cadastrados</h2>
+
+  <table>
+    <tr>
+      <th>Tipo</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th *ngIf="temProfissional">Especialidade</th>
+      <th *ngIf="temProfissional">Conselho</th>
+      <th *ngIf="temProfissional">Foto</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.tipo }}</td>
+      <td>{{ usuario.nome }}</td>
+      <td>{{ usuario.email }}</td>
+      <td>{{ usuario.senha }}</td>
+      <td *ngIf="usuario.tipo === 'profissional'">{{ usuario.registro }}</td>
+      <td *ngIf="usuario.tipo === 'profissional'">{{ usuario.conselho }}</td>
+      <td *ngIf="usuario.tipo === 'profissional'">
+        <img *ngIf="usuario.identidadeFoto" [src]="'assets/' + usuario.identidadeFoto" alt="Foto" class="foto-perfil">
+      </td>
+      <td>
+        <button (click)="editarUsuario(usuario)">Editar</button>
+      </td>
+    </tr>
+  </table>
+</div>

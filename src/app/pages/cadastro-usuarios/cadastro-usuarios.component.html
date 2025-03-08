@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="cadastro-container">
+  <h2>Cadastro de usuários</h2>
+
+  <!-- Escolher tipo de usuário -->
+  <div class="input-group">
+    <label>Tipo de usuário:</label>
+    <select [(ngModel)]="tipoUsuario" (ngModelChange)="onTipoUsuarioChange($event)">
+      <option value="comum">Usuário Comum</option>
+      <option value="profissional">Profissional de Saúde</option>
+    </select>
+  </div>
+
+  <!-- Campos comuns a todos -->
+  <div class="input-group">
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="nome" required>
+  </div>
+
+  <div class="input-group">
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="email" required>
+  </div>
+
+  <div class="input-group">
+    <label>CEP:</label>
+    <input type="text" [(ngModel)]="cep" required>
+  </div>
+
+  <div class="input-group">
+    <label>Idade:</label>
+    <input type="number" [(ngModel)]="idade" required>
+  </div>
+
+  <div class="input-group">
+    <label>Senha:</label>
+    <input type="password" [(ngModel)]="senha" required>
+  </div>
+
+  <!-- Campos exclusivos para profissionais de saúde -->
+  <div *ngIf="tipoUsuario === 'profissional'">
+    <h3>Dados Profissionais</h3>
+
+    <div class="input-group">
+      <label>Registro de Especialidade:</label>
+      <input type="text" [(ngModel)]="registro" [required]="tipoUsuario === 'profissional'">
+    </div>
+
+    <div class="input-group">
+      <label>Conselho Responsável:</label>
+      <select [(ngModel)]="conselho" [required]="tipoUsuario === 'profissional'">
+        <option value="CFM">CFM</option>
+        <option value="COREN">COREN</option>
+        <option value="CONFFITO">CONFFITO</option>
+        <option value="CONFEF">CONFEF</option>
+      </select>
+    </div>
+
+    <!-- Upload da identidade -->
+    <div class="input-group">
+      <label>Foto da Identidade:</label>
+      <input type="file" (change)="onFileSelected($event)">
+      <p *ngIf="identidadeFoto">📂 Arquivo: {{ identidadeFoto.name }}</p>
+    </div>
+  </div>
+
+  <!-- Botão de Cadastro -->
+  <button (click)="cadastrar()">Cadastrar</button>
+</div>

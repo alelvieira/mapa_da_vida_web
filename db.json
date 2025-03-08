@@ -1,0 +1,64 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "tipo": "profissional",
+      "nome": "João Silva",
+      "email": "joao.silva@exemplo.com",
+      "senha": "1234",
+      "registro": "12345",
+      "conselho": "CRP",
+      "identidadeFoto": "foto1.jpg"
+    },
+    {
+      "id": 2,
+      "tipo": "profissional",
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@exemplo.com",
+      "senha": "5678",
+      "registro": "67890",
+      "conselho": "CRM",
+      "identidadeFoto": "foto2.jpg"
+    },
+    {
+      "id": 3,
+      "tipo": "profissional",
+      "nome": "Carlos Pereira",
+      "email": "carlos.pereira@exemplo.com",
+      "senha": "9101",
+      "registro": "11223",
+      "conselho": "OAB",
+      "identidadeFoto": "foto3.jpg"
+    },
+    {
+      "id": 4,
+      "tipo": "comum",
+      "nome": "Ana Souza",
+      "email": "ana.souza@exemplo.com",
+      "senha": "abcd",
+      "registro": "",
+      "conselho": "",
+      "identidadeFoto": "foto4.jpg"
+    },
+    {
+      "id": 5,
+      "tipo": "comum",
+      "nome": "Pedro Santos",
+      "email": "pedro.santos@exemplo.com",
+      "senha": "efgh",
+      "registro": "",
+      "conselho": "",
+      "identidadeFoto": "foto5.jpg"
+    },
+    {
+      "id": 6,
+      "tipo": "comum",
+      "nome": "Laura Costa",
+      "email": "laura.costa@exemplo.com",
+      "senha": "ijkl",
+      "registro": "",
+      "conselho": "",
+      "identidadeFoto": "foto6.jpg"
+    }
+  ]
+}
