@@ -5,6 +5,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.place-card:hover {
+  transform: scale(1.02);
 }
 
 .place-image {

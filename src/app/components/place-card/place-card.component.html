@@ -1,9 +1,6 @@
 <div class="place-card">
-  <img [src]="place.image" alt="Imagem do local" class="place-image">
-  <div class="place-info">
-    <h3>{{ place.name }}</h3>
-    <p><strong>Categoria:</strong> {{ place.category }}</p>
-    <p><strong>Endereço:</strong> {{ place.address }}</p>
-    <p><strong>Descrição:</strong> {{ place.description }}</p>
-  </div>
+  <img [src]="place.imageUrl" alt="Imagem do imóvel">
+  <h3>{{ place.title }}</h3>
+  <p>{{ place.description }}</p>
+  <p>R$ {{ place.price }}</p>
 </div>

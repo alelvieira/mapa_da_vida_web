@@ -1,5 +1,28 @@
+<!-- HEADER -->
 <app-header></app-header>
 
+<!-- BOTÃO PARA ALTERNAR ENTRE LISTA E CARDS -->
+<div class="toggle-container">
+  <button (click)="alternarModo()">
+    {{ exibirLista ? 'Ver Cards' : 'Ver Lista' }}
+  </button>
+</div>
 
-<app-map></app-map>
+<!-- CONTEÚDO COM MAPA FIXO + LISTA OU CARDS -->
+<div class="conteudo">
+  <!-- MAPA -->
+  <div class="mapa">
+    <app-map></app-map>
+  </div>
 
+  <!-- LISTA OU CARDS -->
+  <div class="lugares">
+    <ng-container *ngIf="exibirLista; else cardView">
+      <app-places-list [places]="places"></app-places-list>
+    </ng-container>
+
+    <ng-template #cardView>
+      <app-place-card *ngFor="let place of places" [place]="place"></app-place-card>
+    </ng-template>
+  </div>
+</div>

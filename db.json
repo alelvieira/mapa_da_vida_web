@@ -1,64 +1,102 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "tipo": "profissional",
-      "nome": "João Silva",
-      "email": "joao.silva@exemplo.com",
-      "senha": "1234",
-      "registro": "12345",
-      "conselho": "CRP",
-      "identidadeFoto": "foto1.jpg"
-    },
-    {
-      "id": 2,
-      "tipo": "profissional",
-      "nome": "Maria Oliveira",
-      "email": "maria.oliveira@exemplo.com",
-      "senha": "5678",
-      "registro": "67890",
-      "conselho": "CRM",
-      "identidadeFoto": "foto2.jpg"
-    },
-    {
-      "id": 3,
-      "tipo": "profissional",
-      "nome": "Carlos Pereira",
-      "email": "carlos.pereira@exemplo.com",
-      "senha": "9101",
-      "registro": "11223",
-      "conselho": "OAB",
-      "identidadeFoto": "foto3.jpg"
-    },
-    {
-      "id": 4,
+      "id": "1",
       "tipo": "comum",
-      "nome": "Ana Souza",
-      "email": "ana.souza@exemplo.com",
-      "senha": "abcd",
-      "registro": "",
-      "conselho": "",
-      "identidadeFoto": "foto4.jpg"
+      "nome": "João da Silva",
+      "email": "joao@gmail.com",
+      "senha": "12345678"
     },
     {
-      "id": 5,
-      "tipo": "comum",
-      "nome": "Pedro Santos",
-      "email": "pedro.santos@exemplo.com",
-      "senha": "efgh",
-      "registro": "",
-      "conselho": "",
-      "identidadeFoto": "foto5.jpg"
+      "id": "2",
+      "tipo": "profissional",
+      "nome": "Dra. Maria Souza",
+      "email": "maria@gmail.com",
+      "senha": "abcdef",
+      "registro": "CRM-PR 12345",
+      "conselho": "CFM",
+      "identidadeFoto": "maria-identidade.jpg"
     },
     {
-      "id": 6,
+      "id": "3ecb",
       "tipo": "comum",
-      "nome": "Laura Costa",
-      "email": "laura.costa@exemplo.com",
-      "senha": "ijkl",
-      "registro": "",
-      "conselho": "",
-      "identidadeFoto": "foto6.jpg"
+      "nome": "Comum 1",
+      "email": "comum@1.com.br",
+      "cep": "82220515",
+      "idade": 55,
+      "senha": "comum1"
+    }
+  ],
+  "locais": [
+    {
+      "id": "1",
+      "nome": "Parque Barigui",
+      "categoria": "Parque",
+      "endereco": "Av. Cândido Hartmann, S/N - Bigorrilho, Curitiba - PR",
+      "descricao": "Um dos parques mais famosos de Curitiba, ideal para caminhadas e atividades ao ar livre.",
+      "imagem": "parque-barigui.jpg",
+      "lat": -25.4167,
+      "lng": -49.3083
+    },
+    {
+      "id": "2",
+      "nome": "Jardim Botânico",
+      "categoria": "Parque",
+      "endereco": "R. Engo. Ostoja Roguski - Jardim Botânico, Curitiba - PR",
+      "descricao": "Famoso pelo seu icônico jardim de vidro, é um dos pontos turísticos mais visitados da cidade.",
+      "imagem": "jardim-botanico.jpg",
+      "lat": -25.4425,
+      "lng": -49.2416
+    },
+    {
+      "id": "3",
+      "nome": "Parque Tanguá",
+      "categoria": "Parque",
+      "endereco": "Rua Oswaldo Maciel, 97 - Pilarzinho, Curitiba - PR",
+      "descricao": "Possui um mirante com uma bela vista da cidade, além de lagos e trilhas para caminhada.",
+      "imagem": "parque-tangua.jpg",
+      "lat": -25.3895,
+      "lng": -49.2915
+    },
+    {
+      "id": "4",
+      "nome": "Academia ao Ar Livre - Praça Espanha",
+      "categoria": "Academia ao Ar Livre",
+      "endereco": "R. Pres. Taunay - Batel, Curitiba - PR",
+      "descricao": "Academia ao ar livre com diversos equipamentos para exercícios físicos gratuitos.",
+      "imagem": "academia-praca-espanha.jpg",
+      "lat": -25.4353,
+      "lng": -49.2821
+    },
+    {
+      "id": "5",
+      "nome": "Academia ao Ar Livre - Parque Barigui",
+      "categoria": "Academia ao Ar Livre",
+      "endereco": "Av. Cândido Hartmann, S/N - Bigorrilho, Curitiba - PR",
+      "descricao": "Academia ao ar livre dentro do Parque Barigui, perfeita para exercícios físicos ao lado da natureza.",
+      "imagem": "academia-barigui.jpg",
+      "lat": -25.4159,
+      "lng": -49.3092
+    },
+    {
+      "id": "6",
+      "nome": "Parque São Lourenço",
+      "categoria": "Parque",
+      "endereco": "R. Mateus Leme - São Lourenço, Curitiba - PR",
+      "descricao": "Ótimo para caminhadas, corridas e piqueniques, além de ter uma pista de skate.",
+      "imagem": "parque-sao-lourenco.jpg",
+      "lat": -25.3848,
+      "lng": -49.2782
+    },
+    {
+      "id": "7",
+      "nome": "Academia ao Ar Livre - Parque São Lourenço",
+      "categoria": "Academia ao Ar Livre",
+      "endereco": "R. Mateus Leme - São Lourenço, Curitiba - PR",
+      "descricao": "Espaço ao ar livre para exercícios físicos, localizado dentro do Parque São Lourenço.",
+      "imagem": "academia-sao-lourenco.jpg",
+      "lat": -25.3851,
+      "lng": -49.2779
     }
   ]
 }

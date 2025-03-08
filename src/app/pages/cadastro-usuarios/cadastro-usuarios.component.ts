@@ -1,10 +1,10 @@
-import {Component, inject} from '@angular/core';
-import {Router} from '@angular/router';
-import { LocalStorageService } from '../../services/local-storage.service';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotificationService } from '../../services/notification.service';
-import {FormsModule} from '@angular/forms';
+import { HttpClient } from '@angular/common/http'; // Importar o HttpClient
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {HeaderComponent} from '../../components/header/header.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-cadastro-usuarios',
@@ -18,8 +18,8 @@ import {HeaderComponent} from '../../components/header/header.component';
 })
 export class CadastroUsuariosComponent {
   private router = inject(Router);
-  private storageService = inject(LocalStorageService);
   private notificationService = inject(NotificationService);
+  private httpClient = inject(HttpClient); // Injeção do HttpClient
 
   tipoUsuario: string = 'comum';
   nome: string = '';
@@ -85,8 +85,16 @@ export class CadastroUsuariosComponent {
       })
     };
 
-    this.storageService.setItem('usuario', dadosCadastro);
-    this.notificationService.showMessage('✅ Cadastro realizado com sucesso!');
-    this.router.navigate(['/home']);
+    // Envia os dados para o JSON Server via POST
+    this.httpClient.post('http://localhost:3000/usuarios', dadosCadastro).subscribe({
+      next: (response) => {
+        this.notificationService.showMessage('✅ Cadastro realizado com sucesso!');
+        this.router.navigate(['/home']);
+      },
+      error: (error) => {
+        this.notificationService.showMessage('⚠️ Erro ao realizar o cadastro!');
+        console.error(error);
+      }
+    });
   }
 }

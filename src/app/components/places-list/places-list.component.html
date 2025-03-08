@@ -1,10 +1,7 @@
-<div class="container">
-  <div class="places-column">
-    <h2>Locais</h2>
-    <app-place-card *ngFor="let place of places" [place]="place"></app-place-card>
-  </div>
-  <div class="map-column">
-    <h2>Mapa</h2>
-    <app-map [locations]="places"></app-map>
+<div class="places-list">
+  <div *ngFor="let place of places">
+    <h3>{{ place.title }}</h3>
+    <p>{{ place.description }}</p>
+    <p>R$ {{ place.price }}</p>
   </div>
 </div>
