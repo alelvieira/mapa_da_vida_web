@@ -4,19 +4,44 @@
   gap: 20px;
   padding: 20px;
   align-items: flex-start;
+  height: 100vh; /* Faz com que a altura da tela ocupe toda a altura da janela */
 }
 
 .map-container {
-  flex: 1.5; /* Aumenta o tamanho do mapa */
+  flex: 2; /* Aumenta mais o tamanho do mapa em relação aos outros elementos */
   min-width: 400px;
+  height: 500px; /* Ajuste conforme necessário */
+  margin: auto;
 }
 
-.content-container {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-}
 
+/* Estilos para o botão */
 .toggle-button {
-  margin-bottom: 15px;
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white;              /* Cor do texto */
+  padding: 10px 20px;        /* Espaçamento interno */
+  border: none;              /* Remove bordas */
+  border-radius: 5px;        /* Borda arredondada */
+  font-size: 16px;           /* Tamanho da fonte */
+  display: inline-flex;      /* Exibe o botão como um flex container */
+  align-items: center;       /* Alinha ícone e texto verticalmente */
+  cursor: pointer;          /* Cursor de ponteiro ao passar por cima */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+/* Estilos para os ícones dentro do botão */
+.toggle-button i {
+  margin-right: 8px; /* Espaço entre o ícone e o texto */
+  font-size: 18px;    /* Tamanho do ícone */
+}
+
+/* Efeito de hover no botão */
+.toggle-button:hover {
+  background-color: #45a049; /* Cor de fundo quando o botão é hoverizado */
+}
+
+/* Efeito de foco no botão (quando o botão é clicado) */
+.toggle-button:focus {
+  outline: none; /* Remove o contorno padrão de foco */
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); /* Efeito de sombra */
 }

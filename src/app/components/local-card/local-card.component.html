@@ -1,5 +1,5 @@
 <div class="card-container">
-  <div *ngFor="let place of places" class="card"> <!-- ✅ Iterando sobre places -->
+  <div *ngFor="let place of locais" class="card"> <!-- ✅ Iterando sobre places -->
     <img [src]="'assets/images/' + place.imagem" alt="{{ place.nome }}">
     <h3>{{ place.nome }}</h3>
     <p><strong>Categoria:</strong> {{ place.categoria }}</p>

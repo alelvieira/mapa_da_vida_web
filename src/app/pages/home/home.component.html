@@ -10,9 +10,9 @@
   <!-- Lista ou Cards -->
   <div class="content-container">
     <button class="toggle-button" (click)="alternarModo()">
+      <i class="fa" [ngClass]="exibirLista ? 'fa-th-large' : 'fa-th-list'"></i>
       {{ exibirLista ? 'Ver Cards' : 'Ver Lista' }}
     </button>
-
     <app-locais-list *ngIf="exibirLista" [locais]="locais"></app-locais-list>
     <app-local-card *ngIf="!exibirLista" [locais]="locais"></app-local-card>
   </div>

@@ -1,11 +1,12 @@
 <header>
   <div class="logo">
-    <img ngSrc="assets/mapa_da_vida_branco.png" alt="Logo Mapa da Vida" height="2777" width="2922">
+    <img ngSrc="../../../../public/assets/mapa_da_vida_branco.png" alt="Logo Mapa da Vida" class="logo">
   </div>
   <nav>
-    <a href="#">Cadastro de locais</a>
-    <a routerLink="/cadastro-usuarios">Cadastro de usuários</a>
-    <a routerLink="/consultar-usuarios">Consultar Usuários</a>
+    <a routerLink="/home" routerLinkActive="active-link">Página inicial</a>
+    <a routerLink="/cadastro-locais" routerLinkActive="active-link">Cadastro de locais</a>
+    <a routerLink="/cadastro-usuarios" routerLinkActive="active-link">Cadastro de usuários</a>
+    <a routerLink="/consultar-usuarios" routerLinkActive="active-link">Consultar Usuários</a>
     <a (click)="logout()">Sair</a>
   </nav>
 </header>

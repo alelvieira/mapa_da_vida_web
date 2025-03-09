@@ -3,6 +3,7 @@ import { NotificationService } from './services/notification.service';
 import {NotificationComponent} from './components/notification/notification.component';
 import {Router, RouterOutlet} from '@angular/router';
 import {LocalStorageService} from './services/local-storage.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

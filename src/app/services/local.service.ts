@@ -6,7 +6,7 @@ import { Local } from '../models/local.model'; // Verifique o caminho correto!
 @Injectable({
   providedIn: 'root'
 })
-export class LocaisService {
+export class LocalService {
   private apiUrl = 'http://localhost:3000/locais'; // Certifique-se de que o JSON Server usa "locais"
 
   constructor(private http: HttpClient) {}

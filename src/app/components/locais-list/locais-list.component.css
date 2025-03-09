@@ -1,0 +1,53 @@
+.places-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Aumentado o gap entre os itens */
+  padding: 20px; /* Aumentado o padding geral */
+  max-width: 800px; /* Adicionado limite de largura */
+  margin: 0 auto; /* Centralização da lista */
+}
+
+.place-item {
+  background: #f8f9fa; /* Cor de fundo suave */
+  padding: 20px;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  border-left: 8px solid #28a745; /* Linha lateral mais grossa */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.place-item:hover {
+  transform: scale(1.05); /* Aumento de tamanho mais suave */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+.place-title {
+  font-size: 20px; /* Aumentado o tamanho da fonte */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px; /* Maior espaço entre título e descrição */
+}
+
+.place-category {
+  font-size: 16px; /* Aumentado o tamanho da categoria */
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 10px; /* Distância entre categoria e descrição */
+}
+
+.place-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5; /* Melhor legibilidade */
+}
+
+.place-item .category-icon {
+  margin-right: 8px;
+  color: #28a745; /* Cor do ícone de categoria */
+}
+
+.place-item .place-info {
+  display: flex;
+  justify-content: space-between; /* Para organizar título e categoria */
+  align-items: center;
+}
