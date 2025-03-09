@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlaceCardComponent } from './place-card.component';
+import { LocalCardComponent } from './local-card.component';
 
 describe('PropertyListComponent', () => {
-  let component: PlaceCardComponent;
-  let fixture: ComponentFixture<PlaceCardComponent>;
+  let component: LocalCardComponent;
+  let fixture: ComponentFixture<LocalCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlaceCardComponent]
+      imports: [LocalCardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PlaceCardComponent);
+    fixture = TestBed.createComponent(LocalCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

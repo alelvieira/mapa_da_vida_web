@@ -12,6 +12,8 @@ import {LocalStorageService} from './services/local-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title: string = 'Mapa da Vida';
+
   notificationService = inject(NotificationService);
   private storageService = inject(LocalStorageService);
   private router = inject(Router);
