@@ -1,19 +1,19 @@
 // locais.model.ts
-export type TipoLocal = 'Parque' | 'Academia' | 'Academia ao ar livre';
+export type TipoLocal = 'Parque' | 'Academia' | 'Academia ao ar livre' | 'Praça';
 
 // Classe que implementa a interface Local
 export class Local implements Local {
   id: number;
   nome: string;
-  categoria: string;
+  categoria: TipoLocal;
+  cep: number;
   endereco: string;
   descricao: string;
   imagem: string;
   lat: number;
   lng: number;
-  tipo: TipoLocal;
 
-  constructor(id: number, nome: string, categoria: string, endereco: string, descricao: string, imagem: string, lat: number, lng: number, tipo: TipoLocal) {
+  constructor(id: number, nome: string, categoria: TipoLocal, endereco: string, descricao: string, imagem: string, lat: number, lng: number, cep: number) {
     this.id = id;
     this.nome = nome;
     this.categoria = categoria;
@@ -22,6 +22,6 @@ export class Local implements Local {
     this.imagem = imagem;
     this.lat = lat;
     this.lng = lng;
-    this.tipo = tipo;
+    this.cep = cep;
   }
 }

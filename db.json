@@ -3,7 +3,7 @@
     {
       "id": "1",
       "tipo": "comum",
-      "nome": "João da Silva",
+      "nome": "João ",
       "email": "joao@gmail.com",
       "senha": "12345678"
     },
@@ -97,6 +97,17 @@
       "imagem": "academia-sao-lourenco.jpg",
       "lat": -25.3851,
       "lng": -49.2779
+    },
+    {
+      "id": "a232",
+      "nome": "Praça Acir Macedo Guimarães",
+      "categoria": "Praça",
+      "cep": "82220-170",
+      "endereco": "Rua Carmelina Cavassin, Abranches, Curitiba - PR",
+      "descricao": "Praça muito boa, cancha de futebol de areia. Com academia ao ar livre disponível",
+      "imagem": "b",
+      "lat": 26.6495,
+      "lng": -98.34557
     }
   ]
 }

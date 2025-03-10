@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="cadastro-container">
+  <h2>Cadastrar Novo Local</h2>
+
+  <form [formGroup]="localForm" (ngSubmit)="salvarLocal()">
+    <label>Nome:</label>
+    <input type="text" formControlName="nome" required>
+
+    <label>Categoria:</label>
+    <select formControlName="categoria" required>
+      <option value="Academia ao Ar Livre">Academia ao Ar Livre</option>
+      <option value="Parque">Parque</option>
+      <option value="Academia">Academia</option>
+      <<option value="Praça">Praça</option>
+    </select>
+
+    <label>CEP:</label>
+    <input type="text" formControlName="cep" (blur)="buscarEndereco()" required>
+
+    <label>Endereço:</label>
+    <input type="text" formControlName="endereco" [attr.disabled]="true">
+
+    <label>Descrição:</label>
+    <textarea formControlName="descricao"></textarea>
+
+    <label>Imagem (URL):</label>
+    <input type="text" formControlName="imagem">
+
+    <label>Latitude:</label>
+    <input type="text" formControlName="lat" [attr.disabled]="true">
+
+    <label>Longitude:</label>
+    <input type="text" formControlName="lng" [attr.disabled]="true">
+
+
+    <button type="submit" [disabled]="localForm.invalid">Cadastrar</button>
+  </form>
+
+  <p *ngIf="mensagem" class="mensagem">{{ mensagem }}</p>
+</div>
